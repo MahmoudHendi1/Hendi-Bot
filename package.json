@@ -2,7 +2,7 @@
   "name": "DiscordBot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "start": "node ./src/bot.js",
     "dev": "nodemon ./src/bot.js"
