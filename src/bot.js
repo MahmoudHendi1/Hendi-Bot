@@ -9,7 +9,6 @@ const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION']});
 const { registerCommands, registerEvents } = require('./utils/registry');
 (async () => {
     await client.login(process.env.DISCORDJS_BOT_TOKEN);
-    client.user.setStatus('invisible');
     client.commands = new Discord.Collection();
     const commandFiles = fs.readdirSync(path.join(__dirname, '/commands')).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
