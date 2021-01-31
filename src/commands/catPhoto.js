@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const catPhoto = ()=> axios.get(process.env.CAT_PHOTO_API)
   .then(response => {
-    return (response.data.link)
+    return (response.data.url)
   })
   .catch(error => {
     return error

@@ -26,6 +26,7 @@ module.exports = {
         message.channel.send(e)
     }
   },
+  flags: activityList,
   name:'activity',
   aliases: [],
   description: 'Send a Randome Activity'

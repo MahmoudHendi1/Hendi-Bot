@@ -9,18 +9,15 @@ module.exports = {
         const data =commands.map(command => command);
         data.shift()
         data.forEach(element => {
-          mes.addField(element.name,element.description)
+          if(element.flags){
+              const flags=`\`Flags: ${element.flags.join(' | ')}\``;
+              mes.addField(element.name,element.description +"\n"+ flags )
+          }else{
+            mes.addField(element.name,element.description)
+          }
         });
-
-        return message.author.send(mes)
-            .then(() => {
-                if (message.channel.type === 'dm') return;
-                message.reply('I\'ve sent you a DM with all my commands!');
-            })
-            .catch(error => {
-                console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-                message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
-            });
+        mes.setColor(15844367)
+        return message.channel.send(mes)
 
     }
     
