@@ -2,11 +2,6 @@ const PREFIX = process.env.PREFIX;
 module.exports = (client, message) => {
     if(message.author.bot) return;
 
-    if (message.content.includes("@here") || message.content.includes("@everyone")) return ;
-    if (message.mentions.has(client.user.id)) {
-        message.channel.send("Hello there!, How can I help you?");
-    };
-
     if(!message.content.startsWith(PREFIX)) return;
     if(message.content.length===PREFIX.length)return client.commands.get('').run(client, message, []);
     
