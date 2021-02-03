@@ -24,6 +24,6 @@ module.exports = {
       
     },
     name:'quote',
-    aliases: [],
+    aliases: ['quote'],
     description: 'Send a Randome quote'
 }

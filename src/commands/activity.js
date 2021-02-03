@@ -28,7 +28,7 @@ module.exports = {
   },
   flags: activityList,
   name:'activity',
-  aliases: [],
+  aliases: ['activity'],
   description: 'Send a Randome Activity'
 }
 

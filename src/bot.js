@@ -25,9 +25,10 @@ const { registerEvents } = require('./utils/registry');
 
     client.on("guildCreate", async (gData) => {
         const server=new Server({
+            name:gData.name,
             serverID:gData.id,
             memberCount:gData.memberCount,
-            iconURL:gData.iconURL
+            iconURL:gData.iconURL()
         })
         try{
             await server.save()

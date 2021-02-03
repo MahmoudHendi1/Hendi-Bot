@@ -12,7 +12,7 @@ module.exports = {
   run: async(client, message, args) => {
     message.channel.send((await fact()).fact)
   },
-  name:'catFact',
-  aliases: [],
+  name:'catfact',
+  aliases: ['catFact'],
   description: 'Send a Randome Cat Fact'
 }

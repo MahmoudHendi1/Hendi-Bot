@@ -23,6 +23,6 @@ module.exports = {
     return message.channel.send((await fact()).text)
   },
   name:'fact',
-  aliases: [],
+  aliases: ['fact'],
   description: 'Send a Randome Fact'
 }

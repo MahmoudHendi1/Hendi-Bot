@@ -24,6 +24,6 @@ module.exports = {
     
   },
   name:'recipe',
-  aliases: [],
+  aliases: ['recipe'],
   description: 'Send a Randome recipe'
 }

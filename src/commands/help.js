@@ -9,14 +9,10 @@ module.exports = {
         const data =commands.map(command => command);
         data.shift()
         data.forEach(element => {
-          if(element.flags){
-              const flags=`\`Flags: ${element.flags.join(' | ')}\``;
-              mes.addField(element.name,element.description +"\n"+ flags )
-          }else{
-            mes.addField(element.name,element.description)
-          }
+          mes.addField(element.aliases[0],element.description)  
         });
         mes.setColor(15844367)
+        mes.setFooter("You can use help [command] to get more informatin about one command, like its flags")
         return message.channel.send(mes)
 
     }
@@ -26,16 +22,18 @@ module.exports = {
     if (!command) {
         return message.reply('that\'s not a valid command!');
     }
+  
+  
     const data=[]
-    data.push(`**Name:** ${command.name}`);
+    data.push(`**Name:** ${command.aliases[0]}`);
     if (command.description) data.push(`**Description:** ${command.description}`);
-    if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+    if (command.flags) data.push(`**Flags:** ${command.flags.join(' | ')}`);
     data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
     message.channel.send(data, { split: true });
 
 
   },
   name:'help',
-  aliases: [],
+  aliases: ['help'],
   description: 'Help'
 }

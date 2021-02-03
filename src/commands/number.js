@@ -21,7 +21,7 @@ module.exports = {
     }
   },
   name:'number',
-  aliases: [],
+  aliases: ['number'],
   description: 'Send a Randome Number'
 }
 

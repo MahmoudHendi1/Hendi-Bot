@@ -16,6 +16,6 @@ module.exports = {
         });
   },
   name:'ping',
-  aliases: [],
+  aliases: ['ping'],
   description: 'Pinging'
 }

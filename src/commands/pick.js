@@ -6,10 +6,10 @@ module.exports = {
     }else if(!members.length){
       message.channel.send("You have to mention some member to choose from.");
     }else{
-      message.channel.send(`Hendi chose ${members[Math.floor(Math.random() * (members.length))]}.`);
+      message.channel.send(`:robot: Hendi chose ${members[Math.floor(Math.random() * (members.length))]}.`);
     }
   },
   name:'pick',
-  aliases: [],
+  aliases: ['pick'],
   description: 'It chooses someone randomly from mentioned members.'
 }

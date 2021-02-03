@@ -10,7 +10,7 @@ const catPhoto = ()=> axios.get(process.env.CAT_PHOTO_API)
 
 module.exports = {
   
-  name:'catPhoto',
+  name:'catphoto',
   aliases: ['catPhoto'],
   description: 'Send a Randome Cat Photo',
   async run(client, message, args){
