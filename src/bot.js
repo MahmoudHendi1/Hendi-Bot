@@ -22,20 +22,20 @@ const { registerEvents } = require('./utils/registry');
     client.cachedMessageReactions =new Discord.Collection();
     await registerEvents(client, '../events');
     
-
+    
     client.on("guildCreate", async (gData) => {
-        const server=new Server({
-            name:gData.name,
-            serverID:gData.id,
-            memberCount:gData.memberCount,
-            iconURL:gData.iconURL()
-        })
         try{
+            const server=new Server({
+                name:gData.name,
+                serverID:gData.id,
+                memberCount:gData.memberCount,
+                iconURL:gData.iconURL()
+            })
             await server.save()
         }catch(e){
             console.log(e)
         }
     });
-
-    await client.login(process.env.DISCORDJS_BOT_TOKEN);
+    
+    await client.login(process.env.DISCORDJS_BOT_TOKEN);    
 })();
