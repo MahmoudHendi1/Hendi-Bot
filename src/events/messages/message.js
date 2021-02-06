@@ -13,7 +13,7 @@ module.exports = (client, message) => {
         message.channel.send('Command does not exist. Try `$Hendi help` to get some help');
     }
 
-    let cmdName = message.content.substring(message.content.indexOf(str)+str.length+1).split(new RegExp(/\s+/))[0].toLowerCase().trim();
+    let cmdName = message.content.substring(message.content.indexOf(str)+str.length+1).trim().split(new RegExp(/\s+/))[0].toLowerCase();
     let argsToParse = message.content.substring(message.content.indexOf(cmdName)+cmdName.length+1);
     if(client.commands.get(cmdName)){
         client.commands.get(cmdName).run(client, message, argsToParse);
